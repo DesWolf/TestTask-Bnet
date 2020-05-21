@@ -58,7 +58,7 @@ struct NetworkManagerData {
         }
     }
     
-    func getEntries(session: String, completion: @escaping (_ message: GetEntries?,_ error: String?)->()){
+    func getEntries(session: String, completion: @escaping (_ message: Entries?,_ error: String?)->()){
         
         let parameters = ["a": "get_entries", "session": session]
         router.request(.newSession(parameters: parameters)) { data, response, error in
@@ -75,7 +75,7 @@ struct NetworkManagerData {
                         return
                     }
                     do {
-                        let apiResponse = try JSONDecoder().decode(GetEntries.self, from: responseData)
+                        let apiResponse = try JSONDecoder().decode(Entries.self, from: responseData)
                         completion(apiResponse,nil)
                     }catch {
                         print(error)

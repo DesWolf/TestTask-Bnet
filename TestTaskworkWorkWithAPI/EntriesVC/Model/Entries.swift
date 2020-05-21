@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct GetEntries: Decodable {
+struct Entries: Decodable {
     let status: Int
-    let data : [[EntriesData]]?
+    let data : [[EntryData]]?
     let error: String?
 }
 
-struct EntriesData: Decodable {
+struct EntryData: Decodable {
     let id: String?
     let body: String?
     let da: String?
