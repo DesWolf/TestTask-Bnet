@@ -9,7 +9,6 @@
 import Foundation
 
 protocol EndPointType {
-    var baseURL: URL { get }
     var scheme: String { get }
     var host : String { get }
     var path: String { get }

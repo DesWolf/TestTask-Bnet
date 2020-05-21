@@ -8,46 +8,50 @@
 
 import Foundation
 
-enum NetworkEnvironment {
-    case qa
-    case production
-    case staging
-}
-
 public enum DataApi {
     case newSession(parameters: [String: String])
-
+    case getEntries(parameters: [String: String])
+    case addEntries(parameters: [String: String])
 }
 
 extension DataApi: EndPointType {
-
+    
     var scheme: String {
         return "https"
     }
     var host: String {
-       return "bnet.i-partner.ru"
-    }
-    
-    var baseURL: URL {
-        guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured.")}
-        return url
+        return "bnet.i-partner.ru"
     }
     
     var path: String {
         switch self {
         case .newSession(_):
             return "/testAPI/"
-
+        case .getEntries(_):
+            return "/testAPI/"
+        case .addEntries(_):
+            return "/testAPI/"
         }
     }
     
     var httpMethod: HTTPMethod {
-        return .post
+        switch self {
+        case .newSession(_):
+            return .post
+        case .getEntries(_):
+            return .post
+        case .addEntries(_):
+            return .post
+        }
     }
     
     var queryItems: [String: String] {
         switch self {
         case .newSession(let parameters):
+            return parameters
+        case .getEntries(let parameters):
+            return parameters
+        case .addEntries(let parameters):
             return parameters
         }
     }
