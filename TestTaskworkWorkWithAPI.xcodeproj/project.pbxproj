@@ -113,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5FC26D247687F000E54FFC /* Model */,
+				9EF3369B2477E04C000013F9 /* View */,
 				9E5FC26F247687FD00E54FFC /* Controller */,
 			);
 			path = Entry;
@@ -232,6 +233,13 @@
 				9E9166512474F6CF00687004 /* AppDelegate.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9EF3369B2477E04C000013F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,7 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJR74JV9LN;
 				INFOPLIST_FILE = "$(SRCROOT)/TestTaskworkWorkWithAPI/App/Support/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJR74JV9LN;
 				INFOPLIST_FILE = "$(SRCROOT)/TestTaskworkWorkWithAPI/App/Support/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
