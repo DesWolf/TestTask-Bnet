@@ -23,8 +23,6 @@ class EntriesVC: UIViewController {
         activityIndicator.hidesWhenStopped = true
         
         newSession()
-
-        
     }
     @IBAction func refresh(_ sender: Any) {
         newSession()
@@ -47,8 +45,8 @@ extension EntriesVC: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: entry)
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 87
+    private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

@@ -11,9 +11,7 @@ import UIKit
 class DetailedEntryVC: UIViewController {
 
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var daLabel: UILabel!
-    @IBOutlet weak var dmLabel: UILabel!
+    @IBOutlet weak var bodyTF: UITextView!
     
     var entry: EntryData?
     var sesionKey = ""
@@ -25,9 +23,7 @@ class DetailedEntryVC: UIViewController {
     }
     
     private func  configureScreen() {
-        idLabel.text = "id: \(entry?.id ?? "")"
-        bodyLabel.text = "Body: \(entry?.body ?? "")"
-        daLabel.text = "da: \(entry?.da ?? "")"
-        dmLabel.text = entry?.da != entry?.dm ? "dm: \(entry?.dm ?? "")" : ""
+        self.navigationItem.title = entry?.id ?? ""
+        bodyTF.text = entry?.body ?? ""
     }
 }

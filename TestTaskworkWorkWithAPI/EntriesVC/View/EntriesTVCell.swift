@@ -13,6 +13,7 @@ class EntriesTVCell: UITableViewCell {
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var da: UILabel!
     @IBOutlet weak var dm: UILabel!
+    @IBOutlet weak var modyfy: UILabel!
     
     private var supportFunc = SupportFunc()
     
@@ -21,12 +22,9 @@ class EntriesTVCell: UITableViewCell {
         let dateCreate = supportFunc.changeDate(str: entry.da ?? "")
         let dateModify = supportFunc.changeDate(str: entry.dm ?? "")
         
-        da.text = "date create: \(dateCreate)"
-        dm.text = dateCreate != dateModify ? "date modify: \(dateModify)" : ""
+        da.text = "\(dateCreate)"
+        dm.text = dateCreate != dateModify ? "\(dateModify)" : ""
+        modyfy.text = dateCreate != dateModify ? "Modify:" : ""
         body.text = entry.body?.maxLength(length: 200)
     }
-    
-    
-
 }
-

@@ -113,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				9E5FC26D247687F000E54FFC /* Model */,
-				9E5FC26E247687F600E54FFC /* View */,
 				9E5FC26F247687FD00E54FFC /* Controller */,
 			);
 			path = Entry;
@@ -125,13 +124,6 @@
 				9E5FC262247676F600E54FFC /* AddEntry.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		9E5FC26E247687F600E54FFC /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9E5FC26F247687FD00E54FFC /* Controller */ = {

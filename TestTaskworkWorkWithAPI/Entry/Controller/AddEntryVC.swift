@@ -33,7 +33,6 @@ class AddEntryVC: UIViewController {
 
 //MARK: Network
 extension AddEntryVC {
-     
     private func addEntries(sessionKey: String, body: String) {
         networkManagerData.addEntry(session: sessionKey, body: body) { [weak self] (id, error)  in
             guard let id = id else {

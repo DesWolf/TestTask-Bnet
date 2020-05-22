@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct SupportFunc {
     
     func changeDate(str: String) -> String {
@@ -28,7 +27,9 @@ extension String {
         if nsString.length >= length {
             str = nsString.substring(with: NSRange( location: 0,
                                                     length: nsString.length > length ? length : nsString.length)
-            )}
-        return  "\(str)..."
+            )
+            return "\(str)..."
+        }
+        return str
     }
 }
