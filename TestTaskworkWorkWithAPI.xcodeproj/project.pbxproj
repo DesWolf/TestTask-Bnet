@@ -201,10 +201,10 @@
 		9E91666A2474F78C00687004 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				9E0A78392476E21F0045DF1F /* SupportFunc.swift */,
 				9E91666E2474F88800687004 /* AlertExtention.swift */,
 				9E91665A2474F6D100687004 /* Assets.xcassets */,
 				9E91665F2474F6D100687004 /* Info.plist */,
-				9E0A78392476E21F0045DF1F /* SupportFunc.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";

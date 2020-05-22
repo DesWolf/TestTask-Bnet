@@ -223,6 +223,9 @@
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="aEU-t1-lXu" id="rqY-2e-fWq"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -266,6 +269,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="saveButton" destination="B1D-YJ-Fud" id="VT3-PV-1jI"/>
                         <outlet property="textView" destination="lhP-zZ-zpn" id="Exy-Jz-sHM"/>
                         <segue destination="wXL-jX-IPg" kind="unwind" identifier="addEntry" unwindAction="unwindSegue:" id="26d-0X-ABb"/>
                     </connections>

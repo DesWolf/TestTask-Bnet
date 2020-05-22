@@ -10,7 +10,6 @@ import UIKit
 
 class DetailedEntryVC: UIViewController {
 
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var bodyTF: UITextView!
     
     var entry: EntryData?

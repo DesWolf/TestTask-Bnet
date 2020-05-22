@@ -9,8 +9,9 @@
 import UIKit
 
 class AddEntryVC: UIViewController {
-
+    
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     private let networkManagerData = NetworkManagerData()
     var sesionKey = ""
@@ -24,9 +25,13 @@ class AddEntryVC: UIViewController {
     }
     
     @IBAction func saveButtonPress(_ sender: Any) {
-        addEntries(sessionKey: sesionKey, body: textView.text ?? "")
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
-        self.performSegue(withIdentifier: "addEntry", sender: self)
+        if textView.text.isEmpty {
+            simpleAlert(message: "Please fill text")
+        } else {
+            addEntries(sessionKey: sesionKey, body: textView.text ?? "")
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
+                self.performSegue(withIdentifier: "addEntry", sender: self)
+            }
         }
     }
 }
@@ -38,7 +43,7 @@ extension AddEntryVC {
             guard let id = id else {
                 print(error ?? "")
                 DispatchQueue.main.async {
-                    self?.alertNetwork(message: error ?? "")
+                    self?.simpleAlert(message: error ?? "")
                 }
                 return
             }
@@ -46,7 +51,7 @@ extension AddEntryVC {
             switch id.status {
             case 0:
                 DispatchQueue.main.async {
-                    self?.alertNetwork(message: id.error ?? "")
+                    self?.simpleAlert(message: id.error ?? "")
                 }
             case 1:
                 print(id.data.id)
@@ -59,7 +64,7 @@ extension AddEntryVC {
 
 //MARK: Alert
 extension AddEntryVC {
-    func alertNetwork(message: String) {
+    func simpleAlert(message: String) {
         UIAlertController.alert(title:"Error", msg:"\(message)", target: self)
     }
 }
